@@ -1,0 +1,65 @@
+body {
+  background-color: black;
+  height: 100vh;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+}
+
+/* Image Containers */
+.image-container {
+  height: 400px;
+  width: 400px;
+  /* background-color: aquamarine; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.image-container-hover {
+  justify-content: space-between;
+  transition: 0.7s ease-in;
+}
+
+/* Two Logos Start from Here */
+.image-1 {
+  height: 100px;
+  margin-left: 90px;
+}
+.image-2 {
+  height: 100px;
+  margin-right: 90px;
+}
+
+.image-1-hover {
+  transform: rotate(180deg);
+  margin-left: 400px;
+  transition: 0.7s ease-in;
+}
+.image-2-hover {
+  transform: rotate(180deg);
+  margin-right: 400px;
+  transition: 0.7s ease-in;
+}
+
+/* Form Starts from Here */
+.form {
+  position: absolute;
+  bottom: 27vh;
+  left: 35vw;
+  z-index: -1;
+}
+.text-area {
+  background-color: black;
+  color: white;
+}
+button {
+  height: 35px;
+  width: 120px;
+  background-color: black;
+  color: white;
+  border: 1px solid white;
+  position: relative;
+  bottom: 13px;
+  right: 10.5vw;
+}
