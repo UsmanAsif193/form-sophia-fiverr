@@ -29,9 +29,9 @@
     transform: translate(-30px, 0px);
   }
   .image-1 {
-    transform: translate(-8vw, 50px);
+    transform: translate(-28vw, 50px);
   }
   .image-2 {
-    transform: translate(8vw, -50px);
+    transform: translate(18vw, -50px);
   }
 }
