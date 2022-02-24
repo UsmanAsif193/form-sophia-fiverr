@@ -23,3 +23,15 @@
   transition-delay: 100ms;
   transform: translate(-12vw, 35px);
 }
+
+@media (max-width: 768px) {
+  .textarea__ {
+    transform: translate(-30px, 0px);
+  }
+  .image-1 {
+    transform: translate(-8vw, 50px);
+  }
+  .image-2 {
+    transform: translate(8vw, -50px);
+  }
+}

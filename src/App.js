@@ -36,7 +36,7 @@ const App = () => {
       <div
         onMouseEnter={() => setHover(true)}
         onMouseLeave={() => setHover(inputChange)}
-        className="w-1/2 sm:w-[20%]  xl:w-[40%] 2xl:w-1/3 flex jusitfy-center items-center"
+        className="w-1/4 sm:w-[20%] xl:w-[40%] 2xl:w-1/3 flex jusitfy-center items-center"
       >
         <div className="flex jusitfy-center items-center">
           <div
@@ -47,7 +47,7 @@ const App = () => {
             <div>
               <img
                 src="/logo1.svg"
-                className={`h-24 mt-24 rotate-180 ${
+                className={`h-16 md:h-24 mt-24 rotate-180 ${
                   hover && "image-rotate image-1"
                 }`}
                 alt=""
@@ -56,7 +56,7 @@ const App = () => {
             <div>
               <img
                 src="/logo2.svg"
-                className={`h-24 mb-24 rotate-180 ${
+                className={`h-16 md:h-24 mb-24 rotate-180 ${
                   hover && "image-rotate image-2"
                 }`}
                 alt=""
@@ -70,8 +70,8 @@ const App = () => {
             className="xl:w-[40%] absolute 2xl:w-1/3 z-10"
           >
             <textarea
-              className="form-control text-white block w-full resize-none px-3 py-1.5 text-base font-normal bg-transparent bg-clip-padding border border-solid border-white rounded
-                      transition ease-in-out m-0 focus:outline-none"
+              className="form-control text-white block text-center w-full resize-none px-3 py-1.5 text-base font-normal bg-transparent bg-clip-padding border border-solid border-white rounded
+                      transition ease-in-out m-0 focus:outline-none textarea__"
               rows="10"
               name="message"
               value={handleChange.message}
@@ -80,9 +80,9 @@ const App = () => {
             <button
               type="submit"
               value="submit"
-              className="right-0 bottom-0 absolute text-white bg-black border border-solid border-white rounded z-20 px-6 py-3"
+              className="right-0 bottom-0 absolute text-white bg-black border border-solid border-white rounded z-20 px-3 py-1 md:px-6 md:py-3"
             >
-              Submit
+              Send Message
             </button>
           </form>
         )}
