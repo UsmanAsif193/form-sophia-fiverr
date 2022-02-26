@@ -46,14 +46,14 @@
   transition-duration: 700ms;
   transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
   transition-delay: 100ms;
-  transform: translate(12vw, -35px);
+  transform: translate(18vw, -200px);
 }
 .image-1 {
   transition: cubic-bezier(0.94, 0.18, 1, 1);
   transition-duration: 700ms;
   transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
   transition-delay: 100ms;
-  transform: translate(-12vw, 35px);
+  transform: translate(-18vw, 135px);
 }
 
 @media (max-width: 768px) {

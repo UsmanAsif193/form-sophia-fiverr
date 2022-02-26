@@ -17,19 +17,20 @@ const App = () => {
   });
   const handleSubmit = (e) => {
     e.preventDefault();
-    send(
-      "service_kcf046u",
-      "template_q01ytzi",
-      handleChange,
-      "user_OJzKyKBJi1x8SjZD8sQSQ"
-    )
-      .then((response) => {
-        console.log("SUCCESS!", response.status, response.text);
-        setHandleChange({ message: "" });
-      })
-      .catch((err) => {
-        console.log("FAILED...", err);
-      });
+    if (inputChange)
+      send(
+        "service_kcf046u",
+        "template_q01ytzi",
+        handleChange,
+        "user_OJzKyKBJi1x8SjZD8sQSQ"
+      )
+        .then((response) => {
+          console.log("SUCCESS!", response.status, response.text);
+          setHandleChange({ message: "" });
+        })
+        .catch((err) => {
+          console.log("FAILED...", err);
+        });
   };
   const handleChangeSubmit = (e) => {
     console.log(e.target.value);
