@@ -77,7 +77,7 @@ const App = () => {
         {hover && (
           <form
             onSubmit={handleSubmit}
-            className="w-[85%] sm:w-1/2 xl:w-[40%] absolute 2xl:w-1/3 z-10 grow-wrap"
+            className="w-[85%] break-all sm:w-1/2 xl:w-[40%] absolute 2xl:w-1/3 z-10 grow-wrap"
           >
             <textarea
               className="form-control text-white block text-center w-full px-3 py-1.5 text-base font-normal bg-transparent bg-clip-padding rounded
