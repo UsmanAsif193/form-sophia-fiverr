@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { send } from "emailjs-com";
 
 const App = () => {
   const [hover, setHover] = useState(false);
+  const [hoverText, setHoverText] = useState(false);
   const [inputChange, setInputChange] = useState(false);
   const [handleChange, setHandleChange] = useState({
     message: "",
@@ -40,7 +41,12 @@ const App = () => {
       setInputChange(true);
     }
   };
-  console.log(handleChange.message);
+  useEffect(() => {
+    if (hover) {
+      setTimeout(() => setHoverText(true), 1400);
+    } else setHoverText(false);
+  }, [hover]);
+
   return (
     <div className="bg-black h-screen flex items-center justify-center">
       <div
@@ -54,19 +60,19 @@ const App = () => {
               hover && ""
             }`}
           >
-            <div className="m-[-3px]">
+            <div className="md:m-[-3px]">
               <img
                 src="/logo1.svg"
-                className={`h-16 md:h-24 mt-24 rotate-180 ${
+                className={`h-16 md:h-24 mt-[3.5rem] md:mt-24 rotate-180 ${
                   hover && "image-rotate image-1"
                 }`}
                 alt=""
               />
             </div>
-            <div className="m-[-3px]">
+            <div className="md:m-[-3px]">
               <img
                 src="/logo2.svg"
-                className={`h-16 md:h-24 mb-24 rotate-180 ${
+                className={`h-16 md:h-24 mb-[4.5rem] md:mb-24 rotate-180 ${
                   hover && "image-rotate image-2"
                 }`}
                 alt=""
@@ -77,23 +83,25 @@ const App = () => {
         {hover && (
           <form
             onSubmit={handleSubmit}
-            className="w-[85%] break-all sm:w-1/2 xl:w-[40%] absolute 2xl:w-1/3 z-10 grow-wrap"
+            className="w-[85%] break-all sm:w-1/2 xl:w-[40%] absolute 2xl:w-1/3 z-10"
           >
             <textarea
-              className="form-control text-white block text-center w-full px-3 py-1.5 text-base font-normal bg-transparent bg-clip-padding rounded
+              className="form-control overflow-hidden resize-none text-white block text-center w-full px-3 py-1.5 text-base font-normal bg-transparent bg-clip-padding rounded
                       transition ease-in-out m-0 focus:outline-none textarea__ "
               rows="10"
               name="message"
               autoFocus
               onChange={handleChangeSubmit}
             ></textarea>
-            <button
-              type="submit"
-              value="submit"
-              className="font-[Glsnecb] font-light text-5xl m-auto flex text-white bg-black rounded z-20 px-3 py-1 md:px-6 md:py-3"
-            >
-              release thoughform
-            </button>
+            {hoverText && (
+              <button
+                type="submit"
+                value="submit"
+                className="font-[Glsnecb] transition duration-700 ease-in-out font-light text-2xl md:text-5xl m-auto flex text-white bg-black rounded z-20 px-3 py-1 md:px-6 md:py-3"
+              >
+                release thoughtform
+              </button>
+            )}
           </form>
         )}
       </div>
