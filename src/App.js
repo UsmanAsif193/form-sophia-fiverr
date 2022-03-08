@@ -80,28 +80,30 @@ const App = () => {
             </div>
           </div>
         </div>
-        {hover && hoverText && (
-          <form
-            onSubmit={handleSubmit}
-            className="w-[85%] break-all sm:w-1/2 xl:w-[40%] absolute 2xl:w-1/3 z-10"
-          >
-            <textarea
-              className="form-control overflow-hidden resize-none text-white block text-center w-full px-3 py-1.5 text-base font-normal bg-transparent bg-clip-padding rounded
+        <form
+          onSubmit={handleSubmit}
+          className="w-[85%] break-all sm:w-1/2 xl:w-[40%] absolute 2xl:w-1/3 z-10"
+        >
+          {hover && hoverText && (
+            <>
+              <textarea
+                className="form-control overflow-hidden resize-none text-white block text-center w-full px-3 py-1.5 text-base font-normal bg-transparent bg-clip-padding rounded
                       transition ease-in-out m-0 focus:outline-none textarea__ "
-              rows="10"
-              name="message"
-              autoFocus
-              onChange={handleChangeSubmit}
-            ></textarea>
-            <button
-              type="submit"
-              value="submit"
-              className="font-[Glsnecb] transition duration-700 ease-in-out font-light text-2xl md:text-5xl m-auto flex text-white bg-black rounded z-20 px-3 py-1 md:px-6 md:py-3"
-            >
-              release thoughtform
-            </button>
-          </form>
-        )}
+                rows="10"
+                name="message"
+                autoFocus
+                onChange={handleChangeSubmit}
+              ></textarea>
+              <button
+                type="submit"
+                value="submit"
+                className="font-[Glsnecb] transition duration-700 ease-in-out font-light text-2xl md:text-5xl m-auto flex text-white bg-black rounded z-20 px-3 py-1 md:px-6 md:py-3"
+              >
+                release thoughtform
+              </button>
+            </>
+          )}
+        </form>
       </div>
     </div>
   );
