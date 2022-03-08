@@ -60,7 +60,7 @@ const App = () => {
               hover && ""
             }`}
           >
-            <div className="md:m-[-3px]">
+            <div className="md:m-[-4px]">
               <img
                 src="/logo1.svg"
                 className={`h-16 md:h-24 mt-[3.5rem] md:mt-24 rotate-180 ${
@@ -69,10 +69,10 @@ const App = () => {
                 alt=""
               />
             </div>
-            <div className="md:m-[-3px]">
+            <div className="md:m-[-4px]  md:ml-[-11px] ">
               <img
                 src="/logo2.svg"
-                className={`h-16 md:h-24 mb-[4.5rem] md:mb-24 rotate-180 ${
+                className={`h-16 md:h-24 mb-[4.5rem] rotate-180 ${
                   hover && "image-rotate image-2"
                 }`}
                 alt=""
@@ -80,7 +80,7 @@ const App = () => {
             </div>
           </div>
         </div>
-        {hover && (
+        {hover && hoverText && (
           <form
             onSubmit={handleSubmit}
             className="w-[85%] break-all sm:w-1/2 xl:w-[40%] absolute 2xl:w-1/3 z-10"
@@ -93,15 +93,13 @@ const App = () => {
               autoFocus
               onChange={handleChangeSubmit}
             ></textarea>
-            {hoverText && (
-              <button
-                type="submit"
-                value="submit"
-                className="font-[Glsnecb] transition duration-700 ease-in-out font-light text-2xl md:text-5xl m-auto flex text-white bg-black rounded z-20 px-3 py-1 md:px-6 md:py-3"
-              >
-                release thoughtform
-              </button>
-            )}
+            <button
+              type="submit"
+              value="submit"
+              className="font-[Glsnecb] transition duration-700 ease-in-out font-light text-2xl md:text-5xl m-auto flex text-white bg-black rounded z-20 px-3 py-1 md:px-6 md:py-3"
+            >
+              release thoughtform
+            </button>
           </form>
         )}
       </div>
