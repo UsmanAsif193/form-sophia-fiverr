@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { send } from "emailjs-com";
 
 const App = () => {
   const [hover, setHover] = useState(false);
+  const [textHover, setTextHover] = useState(false);
   const [inputChange, setInputChange] = useState(false);
   const [handleChange, setHandleChange] = useState({
     message: "",
@@ -43,6 +44,13 @@ const App = () => {
       setInputChange(true);
     }
   };
+  useEffect(() => {
+    if (hover)
+      setTimeout(() => {
+        setTextHover(true);
+      }, 1400);
+    else setTextHover(false);
+  });
 
   return (
     <div className="bg-black h-screen flex items-center justify-center">
@@ -84,7 +92,7 @@ const App = () => {
           onSubmit={handleSubmit}
           className="w-[85%] break-all sm:w-1/2 xl:w-[40%] absolute 2xl:w-1/3 z-10"
         >
-          {hover && (
+          {textHover && hover && (
             <>
               <textarea
                 className="form-control overflow-hidden resize-none text-white block text-center w-full px-3 py-1.5 text-base font-normal bg-transparent bg-clip-padding rounded
