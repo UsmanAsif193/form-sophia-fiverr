@@ -50,7 +50,7 @@ const App = () => {
         setTextHover(true);
       }, 1400);
     else setTextHover(false);
-  });
+  }, [hover]);
 
   return (
     <div className="bg-black h-screen flex items-center justify-center">
@@ -99,6 +99,7 @@ const App = () => {
                       transition ease-in-out m-0 focus:outline-none textarea__ "
                 rows="10"
                 name="message"
+                disabled={messageSent === 2 || messageSent === 1 ? true : false}
                 autoFocus
                 onChange={handleChangeSubmit}
                 value={!inputChange ? "" : handleChange.message}
