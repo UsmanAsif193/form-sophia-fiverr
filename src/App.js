@@ -34,7 +34,6 @@ const App = () => {
         .catch((err) => {
           console.log("FAILED...", err);
           setMessageSent(2);
-          console.log(messageSent);
         });
   };
   const handleChangeSubmit = (e) => {
@@ -96,32 +95,40 @@ const App = () => {
                 onChange={handleChangeSubmit}
                 value={!inputChange ? "" : handleChange.message}
               ></textarea>
-              <button
-                type="submit"
-                value="submit"
-                className="font-[Glsnecb] transition duration-700 ease-in-out font-light text-2xl md:text-5xl m-auto flex text-white bg-black rounded z-20 px-3 py-1 md:px-6 md:py-3"
-              >
-                release thoughtform
-              </button>
+              {messageSent === 0 ? (
+                <button
+                  type="submit"
+                  value="submit"
+                  className="font-[Glsnecb] transition duration-700 ease-in-out font-light text-2xl md:text-5xl m-auto flex text-white bg-black rounded z-20 px-3 py-1 md:px-6 md:py-3"
+                >
+                  release thoughtform
+                </button>
+              ) : messageSent === 1 ? (
+                <button
+                  type="submit"
+                  value="submit"
+                  disabled
+                  className="font-[Glsnecb] transition duration-700 ease-in-out font-light text-2xl md:text-5xl m-auto flex text-white bg-black rounded z-20 px-3 py-1 md:px-6 md:py-3"
+                >
+                  thoughtform sent
+                </button>
+              ) : (
+                messageSent === 2 && (
+                  <button
+                    type="submit"
+                    value="submit"
+                    disabled
+                    className="font-[Glsnecb] transition duration-700 ease-in-out font-light text-2xl md:text-5xl m-auto flex text-white bg-black rounded z-20 px-3 py-1 md:px-6 md:py-3"
+                  >
+                    thoughtform failed
+                  </button>
+                )
+              )}
             </>
           )}
         </form>
       </div>
-      <div>
-        {messageSent === 0 ? (
-          ""
-        ) : messageSent === 1 ? (
-          <div className="text-white absolute top-4 left-[46vw] font-[Glsnecb] text-xl md:text-4xl">
-            Thoughtform Sent
-          </div>
-        ) : (
-          messageSent === 2 && (
-            <div className="text-white absolute top-4 left-[46vw] font-[Glsnecb] text-xl md:text-4xl">
-              Thoughtform Failed
-            </div>
-          )
-        )}
-      </div>
+      <div></div>
     </div>
   );
 };
